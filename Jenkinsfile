@@ -1,11 +1,20 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent {
-        docker { image 'node:18.16.0-alpine' }
-    }
+    agent any 
     stages {
-        stage('Test') {
+        stage('Build') { 
             steps {
-                sh 'node --version'
+                echo 'Building the image'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo 'Testing the image'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'Deploying the ima'
             }
         }
     }
